@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة تسجيل الدخول</title>
+    <!-- ربط ملفات CSS و JavaScript -->
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- الحاوية الرئيسية -->
+    <div class="container">
+        <!-- البطاقة البيضاء -->
+        <div class="card">
+            <!-- قسم الأيقونات المتحركة -->
+            <div class="icon-section">
+                <div class="icon-container">
+                    <!-- أيقونة الأمان -->
+                    <i class="fas fa-shield-alt security-icon active"></i>
+                    <!-- أيقونة التحكم -->
+                    <i class="fas fa-sliders-h control-icon"></i>
+                    <!-- أيقونة الخصوصية -->
+                    <i class="fas fa-user-lock privacy-icon"></i>
+                </div>
+                <div class="icon-text">أمان متقدم متعدد الطبقات</div>
+            </div>
+
+            <!-- قسم المحتوى -->
+            <div class="content-section">
+                <!-- العنوان الرئيسي -->
+                <h1>صفحة تسجيل الدخول إلى لوحة التحكم</h1>
+                <p class="security-note">يرجى اتخاذ جميع تدابير الأمان للوصول الآمن إلى حسابك</p>
+
+                <!-- مكان خلط مفاتيح الأمان -->
+                <div class="security-keys-container">
+                    <div class="security-keys" id="securityKeys">
+                        <!-- سيتم عرض المفاتيح هنا بعد الخلط -->
+                    </div>
+                    <button id="shuffleBtn" class="shuffle-btn">
+                        <i class="fas fa-random"></i> خلط مفاتيح الأمان
+                    </button>
+                </div>
+
+                <!-- نموذج تسجيل الدخول -->
+                <form id="loginForm">
+                    <!-- حقل اسم المستخدم -->
+                    <div class="form-group">
+                        <label for="username">اسم المستخدم</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <!-- خيار تذكرني -->
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <label for="rememberMe">تذكرني</label>
+                    </div>
+
+                    <!-- زر التحقق -->
+                    <button type="button" id="verifyBtn" class="btn primary-btn">
+                        <i class="fas fa-check-circle"></i> تحقق
+                    </button>
+
+                    <!-- زر فقدت مفاتيح الأمان -->
+                    <div class="forgot-keys-container">
+                        <button type="button" id="forgotKeysBtn" class="btn secondary-btn small-btn">
+                            <i class="fas fa-key"></i> فقدت مفاتيح الأمان؟
+                        </button>
+                        <!-- تلميح توضيحي -->
+                        <div class="tooltip">
+                            <i class="fas fa-info-circle"></i>
+                            <span class="tooltip-text">انقر هنا لاستعادة مفاتيح الأمان الخاصة بك</span>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- رابط العودة للصفحة الرئيسية -->
+                <div class="back-link">
+                    إذا نسيت مفاتيحك، <a href="#" id="backToMainBtn">اضغط هنا</a>
+                </div>
+
+                <!-- مؤشر التقدم -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-steps">
+                        <span class="step active">التحقق من الهوية</span>
+                        <span class="step">التحقق الثنائي</span>
+                        <span class="step">الدخول الآمن</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="login.js"></script>
+</body>
+</html>
